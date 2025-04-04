@@ -1,0 +1,163 @@
+body {
+    background-image: url("./public/images/phone\ 2\ 1.png");
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    position: relative;
+}
+
+/* Container for Droppable Boxes (Left side) */
+.droppables-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for each big and normal drop area */
+    gap: 20px;
+    width: 50%;
+}
+
+/* Container for Draggable Items (Right side) */
+.draggables-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 50%;
+}
+
+.audio-wrapper{
+    border: 3px solid red;
+    position: absolute;
+    top: 50%;
+    right: 1rem;;
+}
+
+.audio-initial{
+    display: none;
+}
+
+.draggables-container > *{
+    position: absolute;
+}
+
+.progress-bar{
+    margin: 0;
+    border: 1px solid red;
+    min-width: calc(80vw);
+    height: 5px;
+    position: absolute;
+    top: 1rem;
+    left: 5vw;
+    display: flex;
+    gap: 1rem
+}
+
+.green{
+    background-color: lightgreen;
+    width: 33%;
+    display: none;
+}
+
+/* Styling for Draggable items */
+.draggable {
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid #000;
+    cursor: grab;
+}
+
+/* Big Draggable items */
+.big-draggable {
+    width: 70px;
+    height: 130px;
+    background-color: lightblue;
+}
+
+/* Normal Draggable items */
+.normal-draggable {
+    font-size: 10px;
+    line-height: 50px;
+    width: 70px;
+    height: 130px;
+    background-color: lightgreen;
+}
+
+/* Styling for Droppable boxes */
+.droppable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px dashed #807FBF;
+    min-height: 50px;
+    width: 50px;
+    backdrop-filter: blur(2px);
+    background: #1a153568 ;
+    margin-top: 20px;
+    margin-left: 10px;   
+}
+
+/* Big Droppable boxes */
+.big-droppable {
+    width: 100px;
+    height: 150px;
+    border: 3px dashed #807FBF;
+}
+
+/* Normal Droppable boxes */
+.normal-droppable {
+    width: 100px;
+    height: 150px;
+    background: #1a153568 ;
+}
+
+/* Highlight Droppable boxes when item is dropped */
+.ui-state-highlight {
+    background-color: lightgreen !important;
+}
+
+/* Button Styling */
+.check-button {
+    position: absolute;
+    font-family: "Micro 5", sans-serif;
+    text-transform: capitalize;
+    background-color: #606060BF;
+    border: 1px solid white;
+    text-transform: capitalize;
+    letter-spacing: 5px;
+    right:55px;
+    top:500px;
+    color: white;
+    border-radius: 5px;
+    font-size: 10px;
+}
+
+.scanner{
+    z-index: -10;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 3px dashed #807FBF;
+    border-radius: 10px;
+    padding: 1rem;
+    backdrop-filter: blur(2px);
+    background: #1a153568 ;
+    color:white;
+    left: 55vw;
+  
+}
+
+.scanner h2{
+    font-size: 10px;
+}
+
+.scanner p{
+    font-size: 10px;
+}
+
+#random-card-btn{
+    position: absolute;
+    top:200px;
+    left:230px;
+}
