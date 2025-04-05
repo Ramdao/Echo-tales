@@ -1,3 +1,4 @@
+
 import { BrowserMultiFormatReader } from "@zxing/browser";
 
 const videoElement = document.getElementById("video");

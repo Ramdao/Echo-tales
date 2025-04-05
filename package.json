@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@zxing/browser": "^0.1.5"
+    "@zxing/browser": "^0.1.5",
+    "express": "^5.1.0"
   }
 }
