@@ -3,17 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Droppable - Check Dropped Items</title>
+  <title>Echo Tales | Lost</title>
   <!-- Correct order: jQuery first, then jQuery UI -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery -->
   <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script> <!-- jQuery UI -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script> <!-- Touch Punch -->
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="./styles.css">
- 
+  <link rel="icon" href="./public/images/favicon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Megrim&family=Micro+5&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
-
+<h1>Echo Tales | Lost</h1>
   <div class="progress-bar">
     <div id="pb1" class="green"></div>
     <div id="pb2" class="green"></div>
@@ -142,8 +148,8 @@
 
   <!-- Camera and QR Code Scanner -->
   <div class="scanner">
-    <h2>QR Code Scanner</h2>
-    <video id="video" width="100" height="50" autoplay></video>
+    <!-- <h2>QR Code Scanner</h2> -->
+    <video id="video" width="100%" height="100%" autoplay></video>
     <p>Scanned QR Code: <span id="output"></span></p>
   </div>
   <button id="switchCamera">Switch Camera</button>

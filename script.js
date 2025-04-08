@@ -1,32 +1,32 @@
-
 import { BrowserMultiFormatReader } from "@zxing/browser";
 
 const videoElement = document.getElementById("video");
 const outputElement = document.getElementById("output");
 const codeReader = new BrowserMultiFormatReader();
 
+let videoDevices = [];
+let currentDeviceIndex = 0;
+
 localStorage.progress = 0;
 
-async function startScanner() {
+async function startScanner(deviceId = null) {
   try {
     const devices = await navigator.mediaDevices.enumerateDevices();
-    const videoDevices = devices.filter(
-      (device) => device.kind === "videoinput"
-    );
+    videoDevices = devices.filter((device) => device.kind === "videoinput");
 
     if (videoDevices.length > 0) {
-      const deviceId = videoDevices[0].deviceId;
+      if (!deviceId) {
+        deviceId = videoDevices[currentDeviceIndex].deviceId;
+      }
 
       codeReader.decodeFromVideoDevice(
         deviceId,
         videoElement,
         (result, err) => {
           if (result) {
-            const scannedValue = result.text.trim(); // Get scanned QR code value
+            const scannedValue = result.text.trim();
             outputElement.textContent = scannedValue;
             console.log("QR Code Scanned:", scannedValue);
-
-            // Show the corresponding draggable item
             showDraggableItem(scannedValue);
           }
         }
@@ -39,36 +39,36 @@ async function startScanner() {
   }
 }
 
-// Function to switch camera
 function switchCamera() {
   if (videoDevices.length < 2) {
-      console.warn("No alternative camera found.");
-      return;
+    console.warn("No alternative camera found.");
+    return;
   }
 
   currentDeviceIndex = (currentDeviceIndex + 1) % videoDevices.length;
   console.log(`Switching to camera: ${videoDevices[currentDeviceIndex].label}`);
 
+  codeReader.reset(); // Stop previous scanner
   startScanner(videoDevices[currentDeviceIndex].deviceId);
 }
 
-// Function to show draggable item based on QR code value
+document.getElementById("switchCamera").addEventListener("click", switchCamera);
+
 function showDraggableItem(scannedValue) {
-    const mapping = {
-        1: ["#normal-draggable-1", "#audio-1"],
-        2: ["#normal-draggable-2", "#audio-2"],
-        3: ["#normal-draggable-3", "#audio-3"],
-        4: ["#normal-draggable-4", "#audio-4"],
-        5: ["#normal-draggable-5", "#audio-5"],
-        6: ["#normal-draggable-6", "#audio-6"],
-        7: ["#normal-draggable-7", "#audio-7"],
-        8: ["#normal-draggable-8", "#audio-8"],
-        9: ["#normal-draggable-9", "#audio-9"],
-        10: ["#big-draggable-1", "#audio-10"],
-        11: ["#big-draggable-2", "#audio-11"],
-        12: ["#big-draggable-3", "#audio-12"],
-      };
-      
+  const mapping = {
+    1: ["#normal-draggable-1", "#audio-1"],
+    2: ["#normal-draggable-2", "#audio-2"],
+    3: ["#normal-draggable-3", "#audio-3"],
+    4: ["#normal-draggable-4", "#audio-4"],
+    5: ["#normal-draggable-5", "#audio-5"],
+    6: ["#normal-draggable-6", "#audio-6"],
+    7: ["#normal-draggable-7", "#audio-7"],
+    8: ["#normal-draggable-8", "#audio-8"],
+    9: ["#normal-draggable-9", "#audio-9"],
+    10: ["#big-draggable-1", "#audio-10"],
+    11: ["#big-draggable-2", "#audio-11"],
+    12: ["#big-draggable-3", "#audio-12"],
+  };
 
   const draggableSelector = mapping[scannedValue];
   console.log(draggableSelector);
@@ -165,14 +165,31 @@ $(function () {
     });
 
     if (solvedChapter !== null) {
-    //   alert("Chapter " + solvedChapter + " completed!");
       completeChapter(solvedChapter);
-      localStorage.progress ++;
-        console.log(localStorage.progress); 
-        document.getElementById(`pb${localStorage.progress}`).style.display = "block";
+      localStorage.progress++;
+      console.log(localStorage.progress);
+      document.getElementById(`pb${localStorage.progress}`).style.display =
+        "block";
     } else {
-      alert("Some items are not placed correctly, or the order is wrong!");
-    //   console.log(solvedChapter);
+      // alert("Some items are not placed correctly, or the order is wrong!");
+      const body = document.body;
+      console.log(body.style.backgroundImage);
+      const originalFilter = body.style.filter;
+      const originalBackgroundColor = body.style.background;
+      const bgimage = body.style.backgroundImage;
+      console.log(bgimage);
+
+      // Apply blur and red background
+      body.style.filter = "blur(5px)";
+      body.style.backgroundColor = "red"; // Semi-transparent red
+      body.style.backgroundImage = "none"; 
+
+      // Revert to normal after 1 second (1000 milliseconds)
+      setTimeout(() => {
+        body.style.filter = originalFilter;
+        body.style.background = originalBackgroundColor;
+        body.style.backgroundImage = bgimage; // Restore the original background image
+      }, 500);
     }
   });
 
@@ -188,7 +205,7 @@ $(function () {
     resetDroppables();
 
     if (unsolvedChapters.length === 0) {
-      alert("Congratulations! All chapters completed!");
+      // alert("Congratulations! All chapters completed!");
       $("#random-card-btn").prop("disabled", true);
       $(".check-button").prop("disabled", true);
     }

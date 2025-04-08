@@ -1,20 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-image: url("../images/phone\ 2\ 1.png");
     display: flex;
     justify-content: center;
     align-items: flex-start;
     height: 100vh;
-    font-family: Arial, sans-serif;
+    font-family: "Micro 5", sans-serif;
+    font-size: 18px;
     padding: 20px;
     position: relative;
 }
 
+button{
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.scanner p{
+    display: none;
+}
 /* Container for Droppable Boxes (Left side) */
 .droppables-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns for each big and normal drop area */
     gap: 20px;
     width: 50%;
+    margin-top: 3.6rem;
 }
 
 /* Container for Draggable Items (Right side) */
@@ -24,13 +40,20 @@ body {
     justify-content: center;
     gap: 20px;
     width: 50%;
+    position: absolute;
+    top: 7.5rem;
+    right: 0.1rem;
 }
 
 .audio-wrapper{
-    border: 3px solid red;
     position: absolute;
     top: 50%;
     right: 1rem;;
+}
+
+audio{
+    width: 150px;
+    height: 50px;
 }
 
 .audio-initial{
@@ -43,12 +66,14 @@ body {
 
 .progress-bar{
     margin: 0;
-    border: 1px solid red;
+    border: 1px solid #807FBF;
+    border-radius: 4px;
     min-width: calc(80vw);
-    height: 5px;
+    height: 10px;
     position: absolute;
-    top: 1rem;
-    left: 5vw;
+    top: 4.5rem;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     gap: 1rem
 }
@@ -125,11 +150,24 @@ body {
     border: 1px solid white;
     text-transform: capitalize;
     letter-spacing: 5px;
-    right:55px;
+    right:2.5rem;
     top:500px;
     color: white;
     border-radius: 5px;
-    font-size: 10px;
+    font-size: 24px;
+    text-align: center;
+}
+
+h1{
+    font-family: Megrim;
+    font-weight: 400;
+    color: white;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
 }
 
 .scanner{
@@ -140,12 +178,23 @@ body {
     gap: 0.5rem;
     border: 3px dashed #807FBF;
     border-radius: 10px;
-    padding: 1rem;
     backdrop-filter: blur(2px);
     background: #1a153568 ;
     color:white;
-    left: 55vw;
-  
+    right: 1.8rem;
+    top: 6rem;
+    width: 8rem;
+    height: 13rem;
+}
+
+.draggables-container > *{
+    width: 80px;
+    height: 130px;
+    
+}
+
+video{
+    object-fit: cover;
 }
 
 .scanner h2{
@@ -163,6 +212,7 @@ body {
 }
 
 #switchCamera{
-    margin-top:60%;
-    margin-right: 10%;
+    position: relative;
+    margin-top: 90%;
+    margin-left: 10px;
 }
