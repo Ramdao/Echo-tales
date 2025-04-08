@@ -48,7 +48,7 @@ function switchCamera() {
   currentDeviceIndex = (currentDeviceIndex + 1) % videoDevices.length;
   console.log(`Switching to camera: ${videoDevices[currentDeviceIndex].label}`);
 
-  codeReader.reset(); // Stop previous scanner
+  
   startScanner(videoDevices[currentDeviceIndex].deviceId);
 }
 
