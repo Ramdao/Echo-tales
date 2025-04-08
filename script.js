@@ -39,6 +39,19 @@ async function startScanner() {
   }
 }
 
+// Function to switch camera
+function switchCamera() {
+  if (videoDevices.length < 2) {
+      console.warn("No alternative camera found.");
+      return;
+  }
+
+  currentDeviceIndex = (currentDeviceIndex + 1) % videoDevices.length;
+  console.log(`Switching to camera: ${videoDevices[currentDeviceIndex].label}`);
+
+  startScanner(videoDevices[currentDeviceIndex].deviceId);
+}
+
 // Function to show draggable item based on QR code value
 function showDraggableItem(scannedValue) {
     const mapping = {
