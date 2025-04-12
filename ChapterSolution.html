@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Echo Tales | Lost</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Micro+5&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <h1>Echo Tales | Lost</h1>
+ 
+
+  <!-- Container for Droppable Boxes -->
+  <div class="droppables-container">
+    <div id="big-droppable-1" class="droppable big-droppable" data-expected-id="big-draggable-1" style="position: absolute; left: 1px;">
+      <p>Drop Big 1 Here</p>
+    </div>
+    <div id="big-droppable-2" class="droppable big-droppable" data-expected-id="big-draggable-2" style="position: absolute;top:20rem; left: 1px;">
+      <p>Drop Big 2 Here</p>
+    </div>
+    <div id="big-droppable-3" class="droppable big-droppable" data-expected-id="big-draggable-3" style="position: absolute;top:35rem; left: 1px;">
+      <p>Drop Big 3 Here</p>
+    </div>
+  </div>
+
+  <!-- Container for Draggable Boxes -->
+  <div class="draggables-container">
+    <div id="big-draggable-1" class="draggable big-draggable" data-chapter="1">
+      <p></p>
+    </div>
+    <div id="big-draggable-2" class="draggable big-draggable" data-chapter="2">
+      <p></p>
+    </div>
+    <div id="big-draggable-3" class="draggable big-draggable" data-chapter="3">
+      <p></p>
+    </div>
+  </div>
+
+  <div class="audio-wrapper">
+    <audio id="audio-10" class="audio-initial" controls>
+      <source src="./public/audio/FULLCH1(Demo).mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio-11" class="audio-initial" controls>
+      <source src="./public/audio/FULLCH2(Demo).mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio-12" class="audio-initial" controls>
+      <source src="./public/audio/FULLCH3(Demo).mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <button class="check-button">Check</button>
+  <script src="./chapter.js"></script>
+</body>
+</html>

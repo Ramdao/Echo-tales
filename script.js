@@ -70,6 +70,43 @@ function showDraggableItem(scannedValue) {
     12: ["#big-draggable-3", "#audio-12"],
   };
 
+  function addEventListenersToMapping() {
+    // Iterate over the key-value pairs in the 'mapping' object.
+    for (const key in mapping) {
+        if (mapping.hasOwnProperty(key)) { // Ensure we're not iterating over inherited properties.
+            const [firstElementSelector, secondElementSelector] = mapping[key];
+
+            // Get the DOM elements using the selectors.  Added error handling.
+            const firstElement = document.querySelector(firstElementSelector);
+            const secondElement = document.querySelector(secondElementSelector);
+
+            if (!firstElement) {
+                console.warn(`Element with selector "${firstElementSelector}" not found.`);
+                continue; // Skip to the next iteration if the element doesn't exist.
+            }
+            if (!secondElement) {
+                console.warn(`Element with selector "${secondElementSelector}" not found.`);
+                continue; // Skip to the next iteration if the element doesn't exist.
+            }
+
+            // Add the 'dragstart' event listener to the first element.
+            firstElement.addEventListener('click', () => {
+              audioItems.forEach((item) => {
+                item.style.display = "none";
+              });
+                secondElement.style.display = 'block';
+                audioItems.forEach(audio => audio.pause());
+                console.log(`Clicked on ${firstElementSelector}, showing ${secondElementSelector}`);
+            });
+        }
+    }
+}
+
+// Call the function to add the event listeners.
+addEventListenersToMapping(); 
+
+
+
   const draggableSelector = mapping[scannedValue];
   console.log(draggableSelector);
   const audioItems = document.querySelectorAll(".audio-initial");
@@ -77,6 +114,7 @@ function showDraggableItem(scannedValue) {
   audioItems.forEach((item) => {
     item.style.display = "none";
   });
+  audioItems.forEach(audio => audio.pause());
   if (draggableSelector) {
     $(draggableSelector[0]).fadeIn(500);
     $(draggableSelector[1]).fadeIn(500);
@@ -205,7 +243,7 @@ $(function () {
     resetDroppables();
 
     if (unsolvedChapters.length === 0) {
-      // alert("Congratulations! All chapters completed!");
+      window.location.href = "ChapterSolution.html";
       $("#random-card-btn").prop("disabled", true);
       $(".check-button").prop("disabled", true);
     }

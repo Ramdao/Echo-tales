@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url("../images/phone\ 2\ 1.png");
+    background-image: url("./public/images/phone.png");
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -47,7 +47,7 @@ button{
 
 .audio-wrapper{
     position: absolute;
-    top: 50%;
+    top: 52%;
     right: 1rem;;
 }
 
@@ -67,7 +67,7 @@ audio{
 .progress-bar{
     margin: 0;
     border: 1px solid #807FBF;
-    border-radius: 4px;
+    border-radius: 16px;
     min-width: calc(80vw);
     height: 10px;
     position: absolute;
@@ -75,7 +75,10 @@ audio{
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 1rem
+    gap: 1rem;
+    background-color: grey;
+    overflow: hidden;
+
 }
 
 .green{
@@ -91,6 +94,8 @@ audio{
     border: 1px solid #000;
     cursor: grab;
 }
+
+
 
 /* Big Draggable items */
 .big-draggable {
@@ -187,9 +192,10 @@ h1{
     height: 13rem;
 }
 
+/* chage here to change card */
 .draggables-container > *{
-    width: 80px;
-    height: 130px;
+    width: 90px;
+    height: 150px;
     
 }
 
@@ -213,6 +219,98 @@ video{
 
 #switchCamera{
     position: relative;
-    margin-top: 90%;
+    margin-top: 100%;
     margin-left: 10px;
+}
+
+/* cards */
+
+
+
+#big-draggable-1{
+
+    background-image: url(./public/images/Chapter1/Chapter1.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#big-draggable-2{
+
+    background-image: url(./public/images/Chapter2/Chapter2.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#big-draggable-3{
+
+    background-image: url(./public/images/Chapter3/Chapter3.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-1{
+    background-image: url(./public/images/Chapter1/Ch1f1.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-2{
+    background-image: url(./public/images/Chapter1/Ch1f2.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-3{
+    background-image: url(./public/images/Chapter1/Ch1f3.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+
+#normal-draggable-4{
+    background-image: url(./public/images/Chapter2/Ch2f1.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-5{
+    background-image: url(./public/images/Chapter2/Ch2f2.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-6{
+    background-image: url(./public/images/Chapter2/Ch2f3.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-7{
+    background-image: url(./public/images/Chapter3/Ch3f1.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-8{
+    background-image: url(./public/images/Chapter3/Ch3f2.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-9{
+    background-image: url(./public/images/Chapter3/Ch3f3.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
 }
