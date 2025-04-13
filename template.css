@@ -278,3 +278,43 @@ h1{
     height: 42px;
     width: 200px;
 }
+
+.endpicture{
+    position: absolute;
+    top:10%;
+    left:2%;
+}
+
+.down{
+    position: absolute;
+    top:90%;
+    left:40%;
+}
+
+.DevCredits{
+    position: absolute;
+    right:10%;
+    top:130%;
+}
+
+.credits{
+    position: absolute;
+    width: 163px;
+    font-size: 32px;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    font-family: Quantico;
+    color: #21d1ff;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0px 2px 5px #21d1ff;
+    top:110%;
+    left:25%;
+}
+
+.RadioCredits{
+    position: absolute;
+    right:10%;
+    top:170%;
+}
