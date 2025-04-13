@@ -6,6 +6,8 @@
 
 body {
     background-image: url("./public/images/phone.png");
+    background-size: cover;  
+    background-position: center;  
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -28,9 +30,12 @@ button{
 .droppables-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns for each big and normal drop area */
+    position: absolute;
+    top:15%;
+    left: 0.1rem;
     gap: 20px;
     width: 50%;
-    margin-top: 3.6rem;
+    
 }
 
 /* Container for Draggable Items (Right side) */
@@ -52,8 +57,8 @@ button{
 }
 
 audio{
-    width: 150px;
-    height: 50px;
+    width: 250px;
+    
 }
 
 .audio-initial{
@@ -82,7 +87,7 @@ audio{
 }
 
 .green{
-    background-color: lightgreen;
+    background-color: #a6a5e8;
     width: 33%;
     display: none;
 }
@@ -151,16 +156,18 @@ audio{
     position: absolute;
     font-family: "Micro 5", sans-serif;
     text-transform: capitalize;
-    background-color: #606060BF;
-    border: 1px solid white;
+    background-color: rgba(96, 96, 96, 0.75);
+    border: 1px dashed #a45dff;
     text-transform: capitalize;
     letter-spacing: 5px;
-    right:2.5rem;
-    top:500px;
-    color: white;
-    border-radius: 5px;
-    font-size: 24px;
+    color: #a45dff;
+    border-radius: 15px;
+    font-size: 30px;
     text-align: center;
+    height:49px;
+    width:149px;
+    right:1.5rem;
+    top:85vh;
 }
 
 h1{
@@ -314,3 +321,17 @@ video{
     background-position: center;  
     background-repeat: no-repeat;
 }
+
+.switch-camera{
+    position: absolute;
+    left: 27%;
+    bottom:7%;
+    background-color: #606060BF;
+    border: 1px solid white;
+    color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+}
+
