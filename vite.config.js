@@ -8,6 +8,7 @@ export default defineConfig({
           main: path.resolve(__dirname, 'index.html'),
           Game: path.resolve(__dirname, 'game.html'),
           ChapterSolution: path.resolve(__dirname, 'ChapterSolution.html'),
+          Setup: path.resolve(__dirname, 'howtoplay.html'),
         },
       },
     },

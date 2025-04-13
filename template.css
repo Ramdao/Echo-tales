@@ -31,7 +31,7 @@ h1{
     width: 100%;
     text-align: center;
     font-size: 26px;
-    letter-spacing: 25%;
+    letter-spacing: 0.2em;
    
 }
 
@@ -123,4 +123,62 @@ h1{
     height: 40px;
     font-size: 16px;
     letter-spacing: 0.35em;
+}
+
+/* how to play */
+.howtoplay{
+    font-family: Mina;
+    position: absolute;
+    color: white;
+    bottom: 95%;
+    left: 30%;
+}
+
+.centertitle{
+    font-family: Mina;
+    font-weight: 700;
+    position: absolute;
+    color: white;
+    top:10%;
+    left:30%;
+    font-size: 24px;
+}
+
+.card1{
+    position: absolute;
+    top:20%;
+    left:5%;
+}
+
+.cardinfo1{
+    position: absolute;
+    top: 25%;
+    right:14%;
+}
+.textbox1{
+    width: 178px;
+    
+}
+
+.liststyle{
+    font-family: Mina;
+    font-size: 8px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    color: #fff;
+    height: 101px;
+    text-shadow: 1px 0 0 #1e1b80, 0 1px 0 #1e1b80, -1px 0 0 #1e1b80, 0 -1px 0 #1e1b80;
+
+}
+
+.listposition1{
+    position: absolute;
+    top:15%;
+}
+
+.chaptercardrarity{
+    position: absolute;
+    top:22%;
+    left:44%;
 }
