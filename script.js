@@ -47,8 +47,6 @@ function switchCamera() {
 
   currentDeviceIndex = (currentDeviceIndex + 1) % videoDevices.length;
   console.log(`Switching to camera: ${videoDevices[currentDeviceIndex].label}`);
-
-  
   startScanner(videoDevices[currentDeviceIndex].deviceId);
 }
 
@@ -70,51 +68,14 @@ function showDraggableItem(scannedValue) {
     12: ["#big-draggable-3", "#audio-12"],
   };
 
-  function addEventListenersToMapping() {
-    // Iterate over the key-value pairs in the 'mapping' object.
-    for (const key in mapping) {
-        if (mapping.hasOwnProperty(key)) { // Ensure we're not iterating over inherited properties.
-            const [firstElementSelector, secondElementSelector] = mapping[key];
-
-            // Get the DOM elements using the selectors.  Added error handling.
-            const firstElement = document.querySelector(firstElementSelector);
-            const secondElement = document.querySelector(secondElementSelector);
-
-            if (!firstElement) {
-                console.warn(`Element with selector "${firstElementSelector}" not found.`);
-                continue; // Skip to the next iteration if the element doesn't exist.
-            }
-            if (!secondElement) {
-                console.warn(`Element with selector "${secondElementSelector}" not found.`);
-                continue; // Skip to the next iteration if the element doesn't exist.
-            }
-
-            // Add the 'dragstart' event listener to the first element.
-            firstElement.addEventListener('click', () => {
-              audioItems.forEach((item) => {
-                item.style.display = "none";
-              });
-                secondElement.style.display = 'block';
-                audioItems.forEach(audio => audio.pause());
-                console.log(`Clicked on ${firstElementSelector}, showing ${secondElementSelector}`);
-            });
-        }
-    }
-}
-
-// Call the function to add the event listeners.
-addEventListenersToMapping(); 
-
-
-
   const draggableSelector = mapping[scannedValue];
-  console.log(draggableSelector);
   const audioItems = document.querySelectorAll(".audio-initial");
 
   audioItems.forEach((item) => {
     item.style.display = "none";
   });
   audioItems.forEach(audio => audio.pause());
+  
   if (draggableSelector) {
     $(draggableSelector[0]).fadeIn(500);
     $(draggableSelector[1]).fadeIn(500);
@@ -162,7 +123,57 @@ $(function () {
     });
   }
 
-  $(".draggable").draggable().hide();
+  // Initialize draggables with mobile support
+  $(".draggable").draggable({
+    start: function() {
+      $(this).data('isDragging', false);
+      $(this).data('dragTimeout', setTimeout(() => {
+        $(this).data('isDragging', true);
+      }, 200));
+    },
+    drag: function() {
+      $(this).data('isDragging', true);
+    },
+    stop: function() {
+      clearTimeout($(this).data('dragTimeout'));
+      $(this).data('isDragging', false);
+    }
+  }).hide();
+
+  // Click/tap handler for draggables
+  $(".draggable").on("click touchend", function(e) {
+    if ($(this).data('isDragging')) {
+      e.preventDefault();
+      e.stopPropagation();
+      return;
+    }
+    
+    clearTimeout($(this).data('dragTimeout'));
+    
+    const draggableId = $(this).attr('id');
+    const audioMapping = {
+      "normal-draggable-1": "#audio-1",
+      "normal-draggable-2": "#audio-2",
+      "normal-draggable-3": "#audio-3",
+      "normal-draggable-4": "#audio-4",
+      "normal-draggable-5": "#audio-5",
+      "normal-draggable-6": "#audio-6",
+      "normal-draggable-7": "#audio-7",
+      "normal-draggable-8": "#audio-8",
+      "normal-draggable-9": "#audio-9",
+      "big-draggable-1": "#audio-10",
+      "big-draggable-2": "#audio-11",
+      "big-draggable-3": "#audio-12"
+    };
+    
+    if (audioMapping[draggableId]) {
+      $(".audio-initial").hide();
+      $(".audio-initial").each(function() {
+        this.pause();
+      });
+      $(audioMapping[draggableId]).show();
+    }
+  });
 
   $(".droppable").droppable({
     accept: ".draggable",
@@ -206,27 +217,21 @@ $(function () {
       completeChapter(solvedChapter);
       localStorage.progress++;
       console.log(localStorage.progress);
-      document.getElementById(`pb${localStorage.progress}`).style.display =
-        "block";
+      document.getElementById(`pb${localStorage.progress}`).style.display = "block";
     } else {
-      // alert("Some items are not placed correctly, or the order is wrong!");
       const body = document.body;
-      console.log(body.style.backgroundImage);
       const originalFilter = body.style.filter;
       const originalBackgroundColor = body.style.background;
       const bgimage = body.style.backgroundImage;
-      console.log(bgimage);
 
-      // Apply blur and red background
       body.style.filter = "blur(5px)";
-      body.style.backgroundColor = "red"; // Semi-transparent red
+      body.style.backgroundColor = "red";
       body.style.backgroundImage = "none"; 
 
-      // Revert to normal after 1 second (1000 milliseconds)
       setTimeout(() => {
         body.style.filter = originalFilter;
         body.style.background = originalBackgroundColor;
-        body.style.backgroundImage = bgimage; // Restore the original background image
+        body.style.backgroundImage = bgimage;
       }, 500);
     }
   });

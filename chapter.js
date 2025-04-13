@@ -60,25 +60,64 @@ $(function () {
     });
   
     // Set up click events for draggables to show corresponding audio
-    $(".draggable").click(function() {
-      const draggableId = $(this).attr("id");
-      const audioMap = {
-        "big-draggable-1": "#audio-10",
-        "big-draggable-2": "#audio-11",
-        "big-draggable-3": "#audio-12"
-      };
-      
-      // Hide all audio elements
-      $(".audio-initial").hide();
-      // Pause all audio
-      $(".audio-initial").each(function() {
-        this.pause();
+    $(".draggable").each(function () {
+      let startX = 0, startY = 0;
+      let wasDragged = false;
+      const $el = $(this);
+    
+      $el.on("touchstart", function (e) {
+        const touch = e.originalEvent.touches[0];
+        startX = touch.pageX;
+        startY = touch.pageY;
+        wasDragged = false;
       });
-      
-      // Show and play the corresponding audio
-      if (audioMap[draggableId]) {
-        $(audioMap[draggableId]).show();
-      }
+    
+      $el.on("touchmove", function (e) {
+        const touch = e.originalEvent.touches[0];
+        const dx = Math.abs(touch.pageX - startX);
+        const dy = Math.abs(touch.pageY - startY);
+        if (dx > 10 || dy > 10) {
+          wasDragged = true; // it was a drag, not a tap
+        }
+      });
+    
+      $el.on("touchend", function (e) {
+        if (!wasDragged) {
+          // Handle "tap"
+          const draggableId = $(this).attr("id");
+          const audioMap = {
+            "big-draggable-1": "#audio-10",
+            "big-draggable-2": "#audio-11",
+            "big-draggable-3": "#audio-12"
+          };
+    
+          $(".audio-initial").hide().each(function () {
+            this.pause();
+          });
+    
+          if (audioMap[draggableId]) {
+            $(audioMap[draggableId]).show()[0].play();
+          }
+        }
+      });
+    
+      // Desktop support
+      $el.on("click", function () {
+        const draggableId = $(this).attr("id");
+        const audioMap = {
+          "big-draggable-1": "#audio-10",
+          "big-draggable-2": "#audio-11",
+          "big-draggable-3": "#audio-12"
+        };
+    
+        $(".audio-initial").hide().each(function () {
+          this.pause();
+        });
+    
+        if (audioMap[draggableId]) {
+          $(audioMap[draggableId]).show()[0].play();
+        }
+      });
     });
   
     $checkButton.click(function () {
