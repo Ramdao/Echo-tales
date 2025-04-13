@@ -4,13 +4,13 @@
 }
 
 body{
-    background-image: url(./public/images/Assets/About.png);
+    background-image: url(./public/images/Assets/instructions.png);
     background-size: cover;  
     background-position: center;  
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    width: 385px;
+    width: 390px;
     height: 852px;
     font-family: "Micro 5", sans-serif;
     font-size: 18px;
@@ -181,4 +181,46 @@ h1{
     position: absolute;
     top:22%;
     left:44%;
+}
+
+.card2{
+    position: absolute;
+    top:50%;
+    left:50%;
+}
+
+.liststyle2{
+    font-family: Mina;
+    font-size: 8px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    color: #fff;
+    height: 101px;
+    text-shadow: 1px 0 0 #46236c, 0 1px 0 #46236c, -1px 0 0 #46236c, 0 -1px 0 #46236c;
+
+}
+
+.cardinfo2{
+    position: absolute;
+    top: 56%;
+    left:5%;
+}
+
+.fcardrarity{
+    position: absolute;
+    top:53%;
+    left:23%;
+
+}
+
+.cardinfo3{
+    position: absolute;
+    top: 100%;
+    left:40%;
+}
+
+.listposition2{
+    position: absolute;
+    top:10%;
 }
