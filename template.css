@@ -4,7 +4,7 @@
 }
 
 body{
-    background-image: url(./public/images/Assets/instructions.png);
+    background-image: url(./public/images/Assets/About.png);
     background-size: cover;  
     background-position: center;  
     display: flex;
@@ -223,4 +223,58 @@ h1{
 .listposition2{
     position: absolute;
     top:10%;
+}
+
+.card3{
+    position: absolute;
+    top:99%;
+    left:10%;
+}
+
+.tcardrarity{
+    position: absolute;
+    top:97%;
+    left:40%;
+}
+
+.phoneExample{
+    position: absolute;
+    top:95%;
+    left: 1%;
+}
+
+.instructionlist{
+    position: absolute;
+    top:170%;
+    left:1%;
+    width: 340px;
+}
+
+.insliststyle{
+    font-family: Mina;
+    font-size: 12px;
+}
+
+.downlaodbtn{
+    position: absolute;
+    top:200%;
+    left: 20%;
+    border-radius: 10px;
+    background-color: rgba(59, 59, 59, 0.7);
+    border: 3px solid #5e6d9a;
+    box-sizing: border-box;
+    height: 42px;
+    width: 200px;
+}
+
+.startbtn2{
+    position: absolute;
+    top:207%;
+    left: 20%;
+    border-radius: 10px;
+    background: linear-gradient(242.65deg, #5642b1, #572adf 23.92%, #763ddf 48.35%, #834eee 67.05%, #b29dde 83.33%, #3512a6);
+    border: 3px solid #5e6d9a;
+    box-sizing: border-box;
+    height: 42px;
+    width: 200px;
 }
