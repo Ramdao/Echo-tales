@@ -318,3 +318,16 @@ h1{
     right:10%;
     top:170%;
 }
+
+.exit{
+    position: absolute;
+    top:240%;
+    left:30%;
+    width: 120px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(59, 59, 59, 0.7);
+    border: 3px solid #5e6d9a;
+    box-sizing: border-box;
+    
+}
