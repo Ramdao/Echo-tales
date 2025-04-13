@@ -6,7 +6,8 @@ export default defineConfig({
       rollupOptions: {
         input: {
           main: path.resolve(__dirname, 'index.html'),
-          game: path.resolve(__dirname, 'ChapterSolution.html'),
+          Game: path.resolve(__dirname, 'game.html'),
+          ChapterSolution: path.resolve(__dirname, 'ChapterSolution.html'),
         },
       },
     },

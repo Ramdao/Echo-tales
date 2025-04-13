@@ -1,0 +1,126 @@
+
+*{
+    color: white;
+}
+
+body{
+    background-image: url(./public/images/Assets/About.png);
+    background-size: cover;  
+    background-position: center;  
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 385px;
+    height: 852px;
+    font-family: "Micro 5", sans-serif;
+    font-size: 18px;
+    padding: 20px;
+    position: relative;
+}
+
+
+
+h1{
+    font-family: Megrim;
+    font-weight: 500;
+    color: white;
+    position: absolute;
+    top: 20px;
+    left: 45%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 26px;
+    letter-spacing: 25%;
+   
+}
+
+.spaceship{
+   position: absolute;
+  
+   width: 158px;
+   left:48%;
+   top:8%;
+   
+    
+}
+
+.about{
+    font-family: Mina;
+    position: absolute;
+    color: white;
+    bottom: 95%;
+    left: 40%;
+}
+
+.gameinfo{
+    font-family: Mina;
+    font-weight: 700;
+    position: absolute;
+    color: white;
+    top:20%;
+    left:10%;
+}
+
+.cards{
+    position: absolute;
+    left: 5%;
+    width: 350px;
+    top:30%;
+}
+
+.aboutgame{
+    position: absolute;
+    width: 318px;
+    height: 110px;
+    font-size: 10px;
+    font-family: Mina;
+    left:10%;
+    line-height: 200%;
+    top:50%
+}
+
+.question{
+   
+    font-family: Mina;
+    background: linear-gradient(90.01deg, #0033ff 0.18%, #c1c0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    left: 10%;
+    top:70%;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+}
+
+.howbtn{
+    position: absolute;
+    top:80%;
+    left:25%;
+    height: 40px;
+    width: 180px;
+    border-radius: 10px;
+    background-color: rgba(59, 59, 59, 0.7);
+    border: 3px solid #5e6d9a;
+    box-sizing: border-box;
+    font-family: 'Micro 5';
+    height: 40px;
+    font-size: 16px;
+    letter-spacing: 0.35em;
+}
+
+.startbtn{
+    position: absolute;
+    top:87%;
+    left:25%;
+    height: 40px;
+    width: 180px;
+    border-radius: 10px;
+    background: linear-gradient(242.65deg, #5642b1, #572adf 23.92%, #763ddf 48.35%, #834eee 67.05%, #b29dde 83.33%, #3512a6);
+    border: 3px solid #5e6d9a;
+    box-sizing: border-box;
+    font-family: 'Micro 5';
+    height: 40px;
+    font-size: 16px;
+    letter-spacing: 0.35em;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Echo Tales | Lost</title>
+  <!-- Correct order: jQuery first, then jQuery UI -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery -->
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script> <!-- jQuery UI -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script> <!-- Touch Punch -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="./public/images/favicon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Megrim&family=Micro+5&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+<h1>Echo Tales | Lost</h1>
+  <div class="progress-bar">
+    <div id="pb1" class="green"></div>
+    <div id="pb2" class="green"></div>
+    <div id="pb3" class="green"></div>
+
+  </div>
+
+  <!-- Container for Droppable Boxes (Single column) -->
+  <div class="droppables-container">
+    <!-- Droppable Boxes (1 Big and 3 Normal) -->
+    <div class="droppable-column">
+      <div id="big-droppable-1" class="droppable big-droppable" data-expected-id="big-draggable-1">
+        <p>Big Drop 1</p>
+      </div>
+      <div id="normal-droppable-1" class="droppable normal-droppable" data-expected-id="normal-draggable-1">
+        <p>Drop Here 1</p>
+      </div>
+      <div id="normal-droppable-2" class="droppable normal-droppable" data-expected-id="normal-draggable-2">
+        <p>Drop Here 2</p>
+      </div>
+      <div id="normal-droppable-3" class="droppable normal-droppable" data-expected-id="normal-draggable-3">
+        <p>Drop Here 3</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Container for Draggable Boxes (All cards are in the deck but hidden) -->
+  <div class="draggables-container">
+    <!-- Chapter 1 Draggables -->
+    <div id="big-draggable-1" class="draggable big-draggable" data-chapter="1">
+      <p></p>
+    </div>
+    <div id="normal-draggable-1" class="draggable normal-draggable" data-chapter="1">
+      <p></p>
+    </div>
+    <div id="normal-draggable-2" class="draggable normal-draggable" data-chapter="1">
+      <p></p>
+    </div>
+    <div id="normal-draggable-3" class="draggable normal-draggable" data-chapter="1">
+      <p></p>
+    </div>
+
+    <!-- Chapter 2 Draggables -->
+    <div id="big-draggable-2" class="draggable big-draggable" data-chapter="2">
+      <p></p>
+    </div>
+    <div id="normal-draggable-4" class="draggable normal-draggable" data-chapter="2">
+      <p></p>
+    </div>
+    <div id="normal-draggable-5" class="draggable normal-draggable" data-chapter="2">
+      <p></p>
+    </div>
+    <div id="normal-draggable-6" class="draggable normal-draggable" data-chapter="2">
+      <p></p>
+    </div>
+
+    <!-- Chapter 3 Draggables -->
+    <div id="big-draggable-3" class="draggable big-draggable" data-chapter="3">
+      <p></p>
+    </div>
+    <div id="normal-draggable-7" class="draggable normal-draggable" data-chapter="3">
+      <p>TestChange</p>
+    </div>
+    <div id="normal-draggable-8" class="draggable normal-draggable" data-chapter="3">
+      <p></p>
+    </div>
+    <div id="normal-draggable-9" class="draggable normal-draggable" data-chapter="3">
+      <p></p>
+    </div>
+  </div>
+
+  <div class="audio-wrapper">
+    <audio id="audio-1" class="audio-initial" controls>
+      <source src="./public/audio/Chapter1/CHAPTER1-Fr1(Demo).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-2" class="audio-initial" controls>
+      <source src="./public/audio/Chapter1/CHAPTER1-Fr2(Demo).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-3" class="audio-initial" controls>
+      <source src="./public/audio/Chapter1/CHAPTER1-Fr3(Demo).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-4" class="audio-initial" controls>
+      <source src="./public/audio/Chapter2/CHAPTER2-Fr1(Demo).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-5" class="audio-initial" controls>
+      <source src="./public/audio/Chapter2/CHAPTER2-Fr2(Demo).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-6" class="audio-initial" controls>
+      <source src="./public/audio/Chapter2/CHAPTER2-Fr3(Demo).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-7" class="audio-initial" controls>
+      <source src="./public/audio/Chapter3/CHAPTER3-Fr1(Demo).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-8" class="audio-initial" controls>
+      <source src="./public/audio/Chapter3/CHAPTER3-Fr2(Demo).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-9" class="audio-initial" controls>
+      <source src="./public/audio/Chapter3/CHAPTER3-Fr3(Demo).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-10" class="audio-initial" controls>
+      <source src="./public/audio/Chapter1/CHAPTER1CLUE(Demo).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-11" class="audio-initial" controls>
+      <source src="./public/audio/Chapter2/CHAPTER2CLUE(Demo).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-12" class="audio-initial" controls>
+      <source src="./public/audio/Chapter3/CHAPTER3CLUE(Demo).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  
+
+  <!-- Check Button -->
+  <button class="check-button">Check</button>
+
+  <!-- Camera and QR Code Scanner -->
+  <div class="scanner">
+    <!-- <h2>QR Code Scanner</h2> -->
+    <video id="video" width="100%" height="100%" autoplay></video>
+    <p>Scanned QR Code: <span id="output"></span></p>
+  </div>
+  <button id="switchCamera" class="switch-camera">↻</button>
+  <script type="module" src="./script.js"></script>
+</body>
+</html>
