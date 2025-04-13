@@ -243,7 +243,7 @@ $(function () {
     resetDroppables();
 
     if (unsolvedChapters.length === 0) {
-      window.location.href = "./ChapterSolution.html";
+      window.location.href = "/ChapterSolution.html";
       $("#random-card-btn").prop("disabled", true);
       $(".check-button").prop("disabled", true);
     }
