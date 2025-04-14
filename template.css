@@ -1,3 +1,4 @@
+
 *{
     color: white;
 }
@@ -17,33 +18,39 @@ body{
     position: relative;
 }
 
+
+
 h1{
     font-family: Megrim;
     font-weight: 500;
     color: white;
     position: absolute;
-    top: 2vh;
-    left: 48vw;
+    top: 20px;
+    left: 45%;
     transform: translateX(-50%);
     width: 100%;
     text-align: center;
     font-size: 26px;
     letter-spacing: 0.2em;
+   
 }
 
 .spaceship{
-    position: absolute;
-    width: 158px;
-    left: 49vw;
-    top: 9vh;
+   position: absolute;
+  
+   width: 158px;
+   left:48%;
+   top:8%;
+   
+    
 }
 
 .about{
     font-family: Mina;
     position: absolute;
     color: white;
-    bottom: 93vh;
-    left: 41vw;
+    bottom: 95%;
+    left: 40%;
 }
 
 .gameinfo{
@@ -51,15 +58,15 @@ h1{
     font-weight: 700;
     position: absolute;
     color: white;
-    top: 21vh;
-    left: 11vw;
+    top:20%;
+    left:10%;
 }
 
 .cards{
     position: absolute;
-    left: 6vw;
+    left: 5%;
     width: 350px;
-    top: 31vh;
+    top:30%;
 }
 
 .aboutgame{
@@ -68,27 +75,28 @@ h1{
     height: 110px;
     font-size: 10px;
     font-family: Mina;
-    left: 11vw;
+    left:10%;
     line-height: 200%;
-    top: 51vh;
+    top:50%
 }
 
 .question{
+   
     font-family: Mina;
     background: linear-gradient(90.01deg, #0033ff 0.18%, #c1c0ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: absolute;
-    left: 11vw;
-    top: 71vh;
+    left: 10%;
+    top:70%;
     font-size: 11px;
     letter-spacing: 0.15em;
 }
 
 .howbtn{
     position: absolute;
-    top: 82vh;
-    left: 26vw;
+    top:80%;
+    left:25%;
     height: 40px;
     width: 180px;
     border-radius: 10px;
@@ -96,14 +104,15 @@ h1{
     border: 3px solid #5e6d9a;
     box-sizing: border-box;
     font-family: 'Micro 5';
+    height: 40px;
     font-size: 16px;
     letter-spacing: 0.35em;
 }
 
 .startbtn{
     position: absolute;
-    top: 88vh;
-    left: 27vw;
+    top:87%;
+    left:25%;
     height: 40px;
     width: 180px;
     border-radius: 10px;
@@ -111,6 +120,7 @@ h1{
     border: 3px solid #5e6d9a;
     box-sizing: border-box;
     font-family: 'Micro 5';
+    height: 40px;
     font-size: 16px;
     letter-spacing: 0.35em;
 }
@@ -120,8 +130,8 @@ h1{
     font-family: Mina;
     position: absolute;
     color: white;
-    bottom: 93vh;
-    left: 35vw;
+    bottom: 95%;
+    left: 30%;
 }
 
 .centertitle{
@@ -129,25 +139,25 @@ h1{
     font-weight: 700;
     position: absolute;
     color: white;
-    top: 11vh;
-    left: 35vw;
+    top:10%;
+    left:33%;
     font-size: 24px;
 }
 
 .card1{
     position: absolute;
-    top: 21vh;
-    left: 6vw;
+    top:20%;
+    left:5%;
 }
 
 .cardinfo1{
     position: absolute;
-    top: 26vh;
-    right: 15vw;
+    top: 25%;
+    right:14%;
 }
-
 .textbox1{
     width: 178px;
+    
 }
 
 .liststyle{
@@ -159,23 +169,24 @@ h1{
     color: #fff;
     height: 101px;
     text-shadow: 1px 0 0 #1e1b80, 0 1px 0 #1e1b80, -1px 0 0 #1e1b80, 0 -1px 0 #1e1b80;
+
 }
 
 .listposition1{
     position: absolute;
-    top: 2vh;
+    top:15%;
 }
 
 .chaptercardrarity{
     position: absolute;
-    top: 23vh;
-    left: 45vw;
+    top:22%;
+    left:44%;
 }
 
 .card2{
     position: absolute;
-    top: 51vh;
-    left: 51vw;
+    top:50%;
+    left:50%;
 }
 
 .liststyle2{
@@ -187,53 +198,55 @@ h1{
     color: #fff;
     height: 101px;
     text-shadow: 1px 0 0 #46236c, 0 1px 0 #46236c, -1px 0 0 #46236c, 0 -1px 0 #46236c;
+
 }
 
 .cardinfo2{
     position: absolute;
-    top: 57vh;
-    left: 6vw;
+    top: 56%;
+    left:5%;
 }
 
 .fcardrarity{
     position: absolute;
-    top: 54vh;
-    left: 24vw;
+    top:53%;
+    left:23%;
+
 }
 
 .cardinfo3{
     position: absolute;
-    top: 101vh;
-    left: 41vw;
+    top: 100%;
+    left:40%;
 }
 
 .listposition2{
     position: absolute;
-    top: 1vh;
+    top:10%;
 }
 
 .card3{
     position: absolute;
-    top: 100vh;
-    left: 11vw;
+    top:99%;
+    left:10%;
 }
 
 .tcardrarity{
     position: absolute;
-    top: 98vh;
-    left: 41vw;
+    top:97%;
+    left:40%;
 }
 
 .phoneExample{
     position: absolute;
-    top: 96vh;
-    left: 2vw;
+    top:95%;
+    left: 1%;
 }
 
 .instructionlist{
     position: absolute;
-    top: 171vh;
-    left: 2vw;
+    top:170%;
+    left:1%;
     width: 340px;
 }
 
@@ -244,8 +257,8 @@ h1{
 
 .downlaodbtn{
     position: absolute;
-    top: 201vh;
-    left: 21vw;
+    top:200%;
+    left: 20%;
     border-radius: 10px;
     background-color: rgba(59, 59, 59, 0.7);
     border: 3px solid #5e6d9a;
@@ -262,8 +275,8 @@ h1{
     font-weight: 400;
     letter-spacing: 0.35em;
     font-size: 16px;
-    top: 208vh;
-    left: 21vw;
+    top:207%;
+    left: 20%;
     border-radius: 10px;
     background: linear-gradient(242.65deg, #5642b1, #572adf 23.92%, #763ddf 48.35%, #834eee 67.05%, #b29dde 83.33%, #3512a6);
     border: 3px solid #5e6d9a;
@@ -274,20 +287,20 @@ h1{
 
 .endpicture{
     position: absolute;
-    top: 11vh;
-    left: 3vw;
+    top:10%;
+    left:2%;
 }
 
 .down{
     position: absolute;
-    top: 91vh;
-    left: 41vw;
+    top:90%;
+    left:40%;
 }
 
 .DevCredits{
     position: absolute;
-    right: 11vw;
-    top: 131vh;
+    right:10%;
+    top:130%;
 }
 
 .credits{
@@ -302,31 +315,32 @@ h1{
     align-items: center;
     justify-content: center;
     text-shadow: 0px 2px 5px #21d1ff;
-    top: 111vh;
-    left: 26vw;
+    top:110%;
+    left:25%;
 }
 
 .RadioCredits{
     position: absolute;
-    right: 11vw;
-    top: 171vh;
+    right:10%;
+    top:170%;
 }
 
 .exit{
     position: absolute;
-    top: 251vh;
-    left: 31vw;
+    top:250%;
+    left:30%;
     width: 120px;
     height: 50px;
     border-radius: 10px;
     background-color: rgba(59, 59, 59, 0.7);
     border: 3px solid #5e6d9a;
     box-sizing: border-box;
+    
 }
 
 .prologueAudio{
     position: absolute;
-    top: 51vh;
+    top:50%;
     width: 85%;
-    right: 14vw;
+    right:13%;
 }
