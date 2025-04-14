@@ -133,7 +133,7 @@ $(function () {
       );
 
       if (isPerfectMatch) {
-        alert("You won! All chapters are in the correct order!");
+        window.location.href = "/epilogue.html";
         resetDroppables();
         $(".draggable").draggable("enable").css({ top: 0, left: 0 });
       } else {

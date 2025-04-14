@@ -52,17 +52,21 @@ button{
 
 .audio-wrapper{
     position: absolute;
-    top: 52%;
-    right: 1rem;;
+    top: 60%;
+    right: 1.2rem;;
 }
 
 audio{
     width: 250px;
-    
+    transform-origin: top left; 
+    height: 40px; 
 }
 
 .audio-initial{
     display: none;
+    transform: scale(1.07);
+    transform-origin: top left;
+    width: 250px;
 }
 
 .draggables-container > *{
