@@ -35,7 +35,16 @@ button{
     left: 0.1rem;
     gap: 20px;
     width: 50%;
-    
+    color: #FFF;
+    text-align: center;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-family: 'Mina', sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0%; /* 0px */
+    letter-spacing: 3px;
+    text-transform: capitalize;
 }
 
 /* Container for Draggable Items (Right side) */
@@ -77,21 +86,23 @@ audio{
     margin: 0;
     border: 1px solid #807FBF;
     border-radius: 16px;
-    min-width: calc(80vw);
+    min-width: calc(75vw);
     height: 10px;
     position: absolute;
     top: 4.5rem;
     left: 50%;
     transform: translateX(-50%);
+    border-radius: 100px;
     display: flex;
     gap: 1rem;
-    background-color: grey;
+    background: rgba(112, 111, 144, 0.60);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.40) inset;
     overflow: hidden;
 
 }
 
 .green{
-    background-color: #a6a5e8;
+    background-color: lightgreen;
     width: 33%;
     display: none;
 }
@@ -140,7 +151,10 @@ audio{
 .big-droppable {
     width: 100px;
     height: 150px;
-    border: 3px dashed #807FBF;
+    border: 3px dashed #681DC9;
+    background-color: #8C8CC1;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 0px #9DB3CE inset;
 }
 
 /* Normal Droppable boxes */
@@ -160,17 +174,17 @@ audio{
     position: absolute;
     font-family: "Micro 5", sans-serif;
     text-transform: capitalize;
-    background-color: rgba(96, 96, 96, 0.75);
+    background: rgba(69, 67, 84, 0.75);
     border: 1px dashed #a45dff;
     text-transform: capitalize;
     letter-spacing: 5px;
     color: #a45dff;
     border-radius: 15px;
-    font-size: 30px;
+    font-size: 24px;
     text-align: center;
-    height:49px;
+    height:41px;
     width:149px;
-    right:1.5rem;
+    right:2.5rem;
     top:85vh;
 }
 
@@ -184,18 +198,21 @@ h1{
     transform: translateX(-50%);
     width: 100%;
     text-align: center;
+    font-size: 26px;
+    letter-spacing: 6.5px;
 }
 
 .scanner{
-    z-index: -10;
+     z-index: -10;
     position: absolute;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    border: 3px dashed #807FBF;
     border-radius: 10px;
+    border: 3px solid #8C8CC1;
+    background: rgba(26, 21, 53, 0.60);
+    box-shadow: 0px 4px 8px 0px #9DB3CE inset;
     backdrop-filter: blur(2px);
-    background: #1a153568 ;
     color:white;
     right: 1.8rem;
     top: 6rem;
@@ -207,7 +224,7 @@ h1{
 .draggables-container > *{
     width: 90px;
     height: 150px;
-    
+    border-radius: 5px;
 }
 
 video{
