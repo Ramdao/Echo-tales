@@ -239,8 +239,10 @@ h1{
 
 .phoneExample{
     position: absolute;
-    top:95%;
-    left: 1%;
+    top:105%;
+    left: 6%;
+    width:384px;
+    height: 596px;
 }
 
 .instructionlist{
